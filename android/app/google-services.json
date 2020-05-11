@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "554602506203-oenllg4j4v1uk7qd1vq84j6245l3mo4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tsuruoka.nippo",
+            "certificate_hash": "1565789112ad8476eeaa26ecbc47d964d3649d88"
+          }
+        },
+        {
           "client_id": "554602506203-i1vug0gcsln9gn83s29aatni3aftv6oj.apps.googleusercontent.com",
           "client_type": 3
         }
