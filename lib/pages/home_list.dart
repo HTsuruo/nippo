@@ -38,8 +38,8 @@ class HomeListPage extends StatelessWidget {
           title: const AppLogo(height: 50),
           bottom: TabBar(
             tabs: tabItems,
-            indicatorColor: const Color(0xFF2D3047),
-            labelColor: const Color(0xFF2D3047),
+            indicatorColor: VIC.navy,
+            labelColor: VIC.navy,
             labelStyle: TextStyle(fontWeight: FontWeight.bold),
             unselectedLabelColor: const Color(0xFFAAAAAA),
           ),

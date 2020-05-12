@@ -38,6 +38,7 @@ dependencies:
   bubble_bottom_bar: ^1.2.0
   url_launcher: ^5.4.5
   shared_preferences: ^0.5.7+1
+  email_validator: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,7 @@ flutter:
     - assets/img/ic_logo_twitter.png
     - assets/img/ic_logo_mail.png
     - assets/img/ic_tutorial_line.png
+    - assets/img/profile_dummy.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

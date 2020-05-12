@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nippo/models/post.dart';
 import 'package:nippo/theme.dart';
-import 'package:nippo/dateutil.dart';
+import 'package:nippo/util.dart';
 import 'package:nippo/models/user.dart';
 
 class ContentCard extends StatelessWidget {

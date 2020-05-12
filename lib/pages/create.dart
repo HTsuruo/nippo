@@ -141,6 +141,8 @@ class SubmitBtn extends StatelessWidget {
           Navigator.pop(context);
           Provider.of<ProgressHUDState>(context, listen: false)
               .update(newState: false);
+          controller['title'].dispose();
+          controller['description'].dispose();
         }
       },
       child: Padding(

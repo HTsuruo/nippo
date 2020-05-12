@@ -35,6 +35,11 @@ class UserRepository {
     return users;
   }
 
+  Stream<QuerySnapshot> fetchAllSnapshot() {
+    print('UserRepository -> fetchAllSnapshot');
+    return fireStore.collection(collection).snapshots();
+  }
+
   Future<User> fetchOne({@required String uid}) async {
     print('UserRepository -> fetchOne');
     final doc = await fireStore.collection(collection).document(uid).get();

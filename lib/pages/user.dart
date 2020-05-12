@@ -16,8 +16,8 @@ class UserPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('登録者'),
       ),
-      body: FutureBuilder<List<User>>(
-        future: UserRepository().fetchAll(),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: UserRepository().fetchAllSnapshot(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           print('snapshot is $snapshot');
           switch (snapshot.connectionState) {
@@ -26,14 +26,20 @@ class UserPage extends StatelessWidget {
                 child: CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(VIC.green)),
               );
-            case ConnectionState.done:
+            case ConnectionState.active:
               if (!snapshot.hasData) {
                 return const Center(child: Text('データが見つかりません'));
               }
               if (snapshot.hasError) {
                 return const Center(child: Text('エラーです'));
               }
-              final users = snapshot.data as List<User>;
+              final snapList =
+                  snapshot.data.documents as List<DocumentSnapshot>;
+              final users = <User>[];
+              for (final doc in snapList) {
+                final user = User.fromJson(doc.data);
+                users.add(user);
+              }
               return UserListView(users: users);
             default:
               return const Center(child: Text('hgohoge'));
