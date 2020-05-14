@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:nippo/models/user.dart';
 import 'package:nippo/pages/create.dart';
 import 'package:nippo/pages/home.dart';
 import 'package:nippo/pages/register.dart';
@@ -10,7 +11,9 @@ import 'package:nippo/pages/splash.dart';
 import 'package:nippo/pages/tutorial.dart';
 import 'package:nippo/pages/user.dart';
 import 'package:nippo/pages/user_detail.dart';
+import 'package:nippo/repositories/user_repository.dart';
 import 'package:nippo/states/progress_hub_state.dart';
+import 'package:nippo/states/server_data_state.dart';
 import 'package:nippo/states/user_state.dart';
 import 'package:nippo/theme.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         StateNotifierProvider<UserController, UserState>(
           create: (context) => UserController(),
-        )
+        ),
       ],
       child: MaterialApp(
         title: 'NIPPO',
